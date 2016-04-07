@@ -3,9 +3,6 @@ package com.jnguyen.android.tasklist;
 import java.util.Date;
 import java.util.UUID;
 
-/**
- * Created by Jennifer on 3/24/2016.
- */
 public class Task {
 
     private UUID mId;

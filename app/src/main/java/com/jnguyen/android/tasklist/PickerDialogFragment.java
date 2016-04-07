@@ -13,9 +13,6 @@ import android.view.View;
 import java.util.Calendar;
 import java.util.Date;
 
-/**
- * Created by Jennifer on 3/24/2016.
- */
 public abstract class PickerDialogFragment extends DialogFragment {
 
     private static final String ARG_DATE = "date";
@@ -36,7 +33,6 @@ public abstract class PickerDialogFragment extends DialogFragment {
     @NonNull
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
-        //Date date = (Date) getArguments().getSerializable(ARG_DATE);
         mCalendar = Calendar.getInstance();
 
         View v = initLayout();

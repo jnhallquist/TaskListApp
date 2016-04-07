@@ -13,9 +13,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
-/**
- * Created by Jennifer on 3/24/2016.
- */
 public class TaskStore {
     private static TaskStore sTaskStore;
 
@@ -59,7 +56,7 @@ public class TaskStore {
                 cursor.moveToNext();
             }
         } finally {
-            cursor.close();;
+            cursor.close();
         }
 
         return tasks;

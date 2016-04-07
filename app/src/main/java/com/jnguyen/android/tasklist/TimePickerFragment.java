@@ -9,9 +9,6 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
 
-/**
- * Created by Jennifer on 3/24/2016.
- */
 public class TimePickerFragment extends PickerDialogFragment {
 
     private TimePicker mTimePicker;
@@ -39,9 +36,6 @@ public class TimePickerFragment extends PickerDialogFragment {
 
         int hour = mTimePicker.getCurrentHour();
         int minute = mTimePicker.getCurrentMinute();
-
-        //int hour = mCalendar.get(Calendar.HOUR_OF_DAY);
-        //int minute = mCalendar.get(Calendar.MINUTE);
 
         return new GregorianCalendar(year, month, day, hour, minute).getTime();
     }

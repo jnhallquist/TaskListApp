@@ -12,9 +12,6 @@ import android.support.v7.app.AppCompatActivity;
 import java.util.List;
 import java.util.UUID;
 
-/**
- * Created by Jennifer on 3/24/2016.
- */
 public class TaskPagerActivity extends AppCompatActivity {
     private static final String EXTRA_TASK_ID =
             "com.jnguyen.android.relationshipsaver.task_id";

@@ -22,9 +22,6 @@ import android.widget.EditText;
 import java.util.Date;
 import java.util.UUID;
 
-/**
- * Created by Jennifer on 3/24/2016.
- */
 public class TaskFragment extends Fragment {
 
     private static final String ARG_TASK_ID = "task_id";
@@ -39,7 +36,6 @@ public class TaskFragment extends Fragment {
     private Button mDateButton;
     private Button mTimeButton;
     private CheckBox mCompletedCheckBox;
-    private Button mSendButton;
 
     public static TaskFragment newInstance(UUID taskId) {
         Bundle args = new Bundle();
@@ -126,26 +122,13 @@ public class TaskFragment extends Fragment {
             }
         });
 
-        mSendButton = (Button) v.findViewById(R.id.task_send);
-        mSendButton.setOnClickListener(new View.OnClickListener(){
-            public void onClick(View v) {
-                Intent i = new Intent(Intent.ACTION_SEND);
-                i.setType("text/plain");
-                i.putExtra(Intent.EXTRA_TEXT, getTaskDetails());
-                i.putExtra(Intent.EXTRA_SUBJECT,
-                        getString(R.string.task_details_subject));
-                i = Intent.createChooser(i, getString(R.string.assign_task));
-                startActivity(i);
-            }
-        });
-
         return v;
     }
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (resultCode != Activity.RESULT_OK) {
-            return;
+        //    return;
         }
 
         else if (requestCode == REQUEST_DATE) {
@@ -197,6 +180,14 @@ public class TaskFragment extends Fragment {
                 TaskStore.get(getActivity()).removeTask(taskId);
                 getActivity().finish();
                 return true;
+            case R.id.menu_item_send_task:
+                Intent i = new Intent(Intent.ACTION_SEND);
+                i.setType("text/plain");
+                i.putExtra(Intent.EXTRA_TEXT, getTaskDetails());
+                i.putExtra(Intent.EXTRA_SUBJECT,
+                        getString(R.string.task_details_subject));
+                i = Intent.createChooser(i, getString(R.string.assign_task));
+                startActivity(i);
             default:
                 return super.onOptionsItemSelected(item);
         }

@@ -9,28 +9,18 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
 
-/**
- * Created by Jennifer on 3/24/2016.
- */
 public class DatePickerFragment extends PickerDialogFragment {
-
-    /*public static final String EXTRA_DATE =
-            "com.jnguyen.android.relationshipsaver.date";
-
-    private static final String ARG_DATE = "date";*/
 
     private DatePicker mDatePicker;
 
     public static DatePickerFragment newInstance(Date date) {
         Bundle args = new Bundle();
-        //args.putSerializable(ARG_DATE, date);
 
         DatePickerFragment fragment = new DatePickerFragment();
         fragment.setArguments(args);
         return fragment;
     }
 
-    // New code
     protected View initLayout() {
         View v = LayoutInflater.from(getActivity()).inflate(R.layout.dialog_date, null);
         mDatePicker = (DatePicker) v.findViewById(R.id.dialog_date_date_picker);

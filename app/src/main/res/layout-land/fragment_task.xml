@@ -31,11 +31,15 @@
         <Button android:id="@+id/deadline_date"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"/>
+                android:layout_weight="1"
+                style="@style/TaskListButton"
+                android:layout_margin="5dp"/>
         <Button android:id="@+id/deadline_time"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"/>
+                android:layout_weight="1"
+                style="@style/TaskListButton"
+                android:layout_margin="5dp"/>
 
         <CheckBox android:id="@+id/task_completed"
                   android:layout_width="wrap_content"
@@ -52,9 +56,4 @@
 
     </LinearLayout>
 
-    <Button android:id="@+id/task_send"
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
-            android:text="@string/task_send_text"
-            android:layout_gravity="right"/>
 </LinearLayout>

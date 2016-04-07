@@ -19,9 +19,6 @@ import android.widget.TextView;
 
 import java.util.List;
 
-/**
- * Created by Jennifer on 3/24/2016.
- */
 public class TaskListFragment extends Fragment {
 
     private static final String SAVED_SUBTITLE_VISIBLE = "subtitle";
@@ -33,7 +30,6 @@ public class TaskListFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //mSocket.connect();
         setHasOptionsMenu(true);
     }
 
@@ -121,7 +117,6 @@ public class TaskListFragment extends Fragment {
         if (mAdapter == null) {
             mAdapter = new TaskAdapter(tasks);
             Log.i("socket", "socket");
-            //mSocket.emit("tasks update", tasks);
             mTaskRecyclerView.setAdapter(mAdapter);
         } else {
             mAdapter.setTasks(tasks);
@@ -138,7 +133,7 @@ public class TaskListFragment extends Fragment {
         private TextView mDateTextView;
         private CheckBox mDoneCheckBox;
 
-        public TaskHolder(View itemView) {
+    public TaskHolder(View itemView) {
             super(itemView);
             itemView.setOnClickListener(this);
 
